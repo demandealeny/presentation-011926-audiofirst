@@ -1,0 +1,5 @@
+{
+  "name": "Audio-First Presentation",
+  "description": "A scrollytelling presentation page using React, Tailwind, and GSAP.",
+  "requestFramePermissions": []
+}
