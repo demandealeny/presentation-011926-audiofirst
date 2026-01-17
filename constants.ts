@@ -55,16 +55,30 @@ export const SLIDES: SlideContent[] = [
   },
   {
     id: 'slide-6',
-    type: SlideType.SPLIT,
+    type: SlideType.CARDS,
     title: "La preuve que ça marche",
-    subtitle: "Ce n'est pas de la théorie",
-    content: [
-      "Sophia Parra - Pocket CMO (taux conversion 1.5%)",
-      "Micro Audio Summit : 100-1000 leads en 6 semaines",
-      "Coachs et consultants en ligne (US)"
-    ],
-    emoji: "📈",
-    highlight: true
+    subtitle: "Des résultats concrets tirés d'études de cas réelles",
+    emoji: "🔥",
+    highlight: true,
+    extraData: {
+      items: [
+        { 
+          title: "$1.8M", 
+          desc: "Andrea Crowder : x4.5 de C.A. en 1 an (passage de 400k à 1.8M) en basculant sur un modèle 'Tout Audio'.", 
+          icon: "📈" 
+        },
+        { 
+          title: "$320k", 
+          desc: "Julie Ciardi : Lancement réussi avec 50% de cash collecté immédiatement grâce à l'intimité du podcast privé.", 
+          icon: "💰" 
+        },
+        { 
+          title: "$150k/mois", 
+          desc: "Colleen Catchman : Passage de 40k à 150k $/mois grâce à l'utilisation stratégique de tunnels de podcasts privés.", 
+          icon: "🚀" 
+        }
+      ]
+    }
   },
   {
     id: 'slide-7',

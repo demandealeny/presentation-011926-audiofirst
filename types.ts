@@ -3,11 +3,12 @@ export enum SlideType {
   intro = 'INTRO',
   LIST = 'LIST',
   CENTER_EMOJI = 'CENTER_EMOJI',
-  SPLIT = 'SPLIT',
+  SPLIT = 'SPLIT', // Keeping for backward compatibility if needed, though unused now
   PROCESS = 'PROCESS',
   BIG_STATEMENT = 'BIG_STATEMENT',
   CONTACT = 'CONTACT',
-  IMAGE_CTA = 'IMAGE_CTA'
+  IMAGE_CTA = 'IMAGE_CTA',
+  CARDS = 'CARDS'
 }
 
 export interface SlideContent {

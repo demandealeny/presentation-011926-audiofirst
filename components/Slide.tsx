@@ -11,7 +11,7 @@ interface SlideProps {
 }
 
 // Inline SVG Patterns (Hero Patterns)
-const PATTERN_1 = `data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20z' fill='%23320133' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E`; 
+const PATTERN_1 = `data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20z' fill='%23320133' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E`; 
 const PATTERN_2 = `data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23320133' fill-opacity='0.05'/%3E%3C/svg%3E`;
 
 export const Slide: React.FC<SlideProps> = ({ data, index }) => {
@@ -61,6 +61,18 @@ export const Slide: React.FC<SlideProps> = ({ data, index }) => {
           { x: 0, opacity: 1, duration: 0.5, stagger: 0.15, ease: "back.out(1.2)" },
           "-=0.2"
         );
+      }
+
+      // Special animation for Cards
+      if (data.type === SlideType.CARDS) {
+         const cards = sectionRef.current?.querySelectorAll('.proof-card');
+         if (cards && cards.length > 0) {
+            tl.fromTo(cards, 
+               { y: 100, opacity: 0, rotationX: 20 },
+               { y: 0, opacity: 1, rotationX: 0, duration: 0.8, stagger: 0.2, ease: "power2.out" },
+               "-=0.5"
+            );
+         }
       }
 
     }, sectionRef);
@@ -124,6 +136,30 @@ export const Slide: React.FC<SlideProps> = ({ data, index }) => {
           </div>
         );
 
+      case SlideType.CARDS:
+         return (
+             <div className="flex flex-col items-center justify-start md:justify-center w-full min-h-full px-6 relative z-10 max-w-7xl mx-auto pt-10 pb-20 md:py-0">
+                 <h2 ref={titleRef} className={`font-display font-bold text-4xl md:text-8xl mb-4 text-center ${purpleText} mt-8 md:mt-0 leading-tight`}>
+                     {data.title}
+                 </h2>
+                 <p ref={subtitleRef} className={`text-lg md:text-3xl font-semibold mb-8 md:mb-12 opacity-80 text-center max-w-3xl ${purpleText}`}>
+                     {data.subtitle}
+                 </p>
+                 
+                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full">
+                     {data.extraData?.items?.map((item, idx) => (
+                         <div key={idx} className="proof-card bg-white border-4 border-brand-purple p-6 md:p-8 rounded-3xl shadow-[6px_6px_0px_0px_rgba(50,1,51,1)] md:shadow-[8px_8px_0px_0px_rgba(50,1,51,1)] hover:shadow-[12px_12px_0px_0px_rgba(252,215,79,1)] hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center">
+                             <div className="text-5xl md:text-6xl mb-4 md:mb-6">{item.icon}</div>
+                             <h3 className="font-display font-bold text-4xl md:text-6xl text-brand-purple mb-3 md:mb-4">{item.title}</h3>
+                             <p className="font-body text-lg md:text-2xl text-brand-purple font-medium leading-relaxed">
+                                 {item.desc}
+                             </p>
+                         </div>
+                     ))}
+                 </div>
+             </div>
+         );
+
       case SlideType.CENTER_EMOJI:
         return (
           <div className="flex flex-col items-center justify-center text-center h-full px-6 max-w-5xl mx-auto relative z-10">
@@ -173,7 +209,7 @@ export const Slide: React.FC<SlideProps> = ({ data, index }) => {
       case SlideType.IMAGE_CTA:
         return (
             <div className="flex flex-col items-center justify-center text-center h-full px-4 relative z-10 w-full max-w-7xl mx-auto py-12 md:py-20">  
-                <h2 ref={titleRef} className={`font-display font-bold text-3xl md:text-6xl mb-12 ${purpleText}`}>
+                <h2 ref={titleRef} className={`font-display font-bold text-3xl md:text-6xl mb-8 ${purpleText}`}>
                   {data.title}
                 </h2>              
                 {/* Image Container with enforced Aspect Ratio */}
