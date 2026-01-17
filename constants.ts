@@ -7,7 +7,7 @@ export const SLIDES: SlideContent[] = [
     title: "L'Audio-First",
     subtitle: "Une nouvelle façon de connecter avec son audience",
     content: "Leny",
-    image: "/assets/avatar-website.jpg",
+    image: "/public/assets/avatar-website.jpg",
     emoji: "🎙️"
   },
   {
