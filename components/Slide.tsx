@@ -11,7 +11,7 @@ interface SlideProps {
 }
 
 // Inline SVG Patterns (Hero Patterns)
-const PATTERN_1 = `data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20z' fill='%23320133' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E`; 
+const PATTERN_1 = `data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20z' fill='%23320133' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E`; 
 const PATTERN_2 = `data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23320133' fill-opacity='0.05'/%3E%3C/svg%3E`;
 
 export const Slide: React.FC<SlideProps> = ({ data, index }) => {
@@ -92,14 +92,29 @@ export const Slide: React.FC<SlideProps> = ({ data, index }) => {
       case SlideType.TITLE:
         return (
           <div className="flex flex-col items-center justify-center text-center h-full px-6 relative z-10">
-            <div className="text-8xl md:text-[10rem] mb-10" ref={contentRef}>{data.emoji}</div>
+            <div className="mb-10 relative" ref={contentRef}>
+                {data.image ? (
+                    <div className="relative inline-block">
+                        <div className="w-56 h-56 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-brand-yellow shadow-[0_0_0_8px_rgba(50,1,51,0.1)] relative z-10 bg-brand-yellow">
+                            <img src={data.image} alt={data.title} className="w-full h-full object-cover" />
+                        </div>
+                        {/* Decorative Emoji Badge */}
+                        <div className="absolute -bottom-2 -right-2 md:bottom-0 md:right-0 bg-brand-white rounded-full p-2 md:p-4 border-4 border-brand-purple shadow-xl z-20 transform rotate-12">
+                             <span className="text-4xl md:text-6xl">{data.emoji}</span>
+                        </div>
+                    </div>
+                ) : (
+                    <div className="text-8xl md:text-[10rem]">{data.emoji}</div>
+                )}
+            </div>
+            
             <h1 ref={titleRef} className={`font-display font-bold text-6xl md:text-9xl mb-6 leading-none ${purpleText}`}>
               {data.title}
             </h1>
             <h2 ref={subtitleRef} className={`font-body font-semibold text-2xl md:text-5xl ${purpleText} max-w-4xl mx-auto tracking-wide`}>
               {data.subtitle}
             </h2>
-            <div className="mt-12 inline-block bg-brand-yellow px-4 py-2 transform -rotate-2">
+            <div className="mt-12 inline-block bg-brand-yellow px-4 py-2 transform -rotate-2 shadow-lg">
                 <p className={`font-mono tracking-widest uppercase text-lg md:text-2xl font-bold ${purpleText}`}>{data.content}</p>
             </div>
           </div>
@@ -149,7 +164,11 @@ export const Slide: React.FC<SlideProps> = ({ data, index }) => {
                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full">
                      {data.extraData?.items?.map((item, idx) => (
                          <div key={idx} className="proof-card bg-white border-4 border-brand-purple p-6 md:p-8 rounded-3xl shadow-[6px_6px_0px_0px_rgba(50,1,51,1)] md:shadow-[8px_8px_0px_0px_rgba(50,1,51,1)] hover:shadow-[12px_12px_0px_0px_rgba(252,215,79,1)] hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center">
-                             <div className="text-5xl md:text-6xl mb-4 md:mb-6">{item.icon}</div>
+                             {item.image ? (
+                                <img src={item.image} alt={item.title} className="w-20 h-20 md:w-24 md:h-24 mb-4 rounded-full object-cover border-4 border-brand-yellow shadow-sm" />
+                             ) : (
+                                <div className="text-5xl md:text-6xl mb-4 md:mb-6">{item.icon}</div>
+                             )}
                              <h3 className="font-display font-bold text-4xl md:text-6xl text-brand-purple mb-3 md:mb-4">{item.title}</h3>
                              <p className="font-body text-lg md:text-2xl text-brand-purple font-medium leading-relaxed">
                                  {item.desc}

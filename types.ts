@@ -18,9 +18,15 @@ export interface SlideContent {
   subtitle?: string;
   content?: string | string[];
   emoji?: string;
+  image?: string; // Added image property
   highlight?: boolean; // Changes background to white/yellow
   extraData?: {
     label?: string;
-    items?: { title: string; desc?: string; icon?: string }[];
+    items?: { 
+      title: string; 
+      desc?: string; 
+      icon?: string;
+      image?: string; // Added image property for items (e.g., cards)
+    }[];
   };
 }
