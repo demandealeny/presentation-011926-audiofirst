@@ -6,7 +6,8 @@ export enum SlideType {
   SPLIT = 'SPLIT',
   PROCESS = 'PROCESS',
   BIG_STATEMENT = 'BIG_STATEMENT',
-  CONTACT = 'CONTACT'
+  CONTACT = 'CONTACT',
+  IMAGE_CTA = 'IMAGE_CTA'
 }
 
 export interface SlideContent {

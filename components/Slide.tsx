@@ -11,7 +11,7 @@ interface SlideProps {
 }
 
 // Inline SVG Patterns (Hero Patterns)
-const PATTERN_1 = `data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20z' fill='%23320133' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E`; 
+const PATTERN_1 = `data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20z' fill='%23320133' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E`; 
 const PATTERN_2 = `data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23320133' fill-opacity='0.05'/%3E%3C/svg%3E`;
 
 export const Slide: React.FC<SlideProps> = ({ data, index }) => {
@@ -81,14 +81,14 @@ export const Slide: React.FC<SlideProps> = ({ data, index }) => {
         return (
           <div className="flex flex-col items-center justify-center text-center h-full px-6 relative z-10">
             <div className="text-8xl md:text-[10rem] mb-10" ref={contentRef}>{data.emoji}</div>
-            <h1 ref={titleRef} className={`font-display font-bold text-7xl md:text-9xl mb-6 leading-none ${purpleText}`}>
+            <h1 ref={titleRef} className={`font-display font-bold text-6xl md:text-9xl mb-6 leading-none ${purpleText}`}>
               {data.title}
             </h1>
-            <h2 ref={subtitleRef} className={`font-body font-semibold text-3xl md:text-5xl ${purpleText} max-w-4xl mx-auto tracking-wide`}>
+            <h2 ref={subtitleRef} className={`font-body font-semibold text-2xl md:text-5xl ${purpleText} max-w-4xl mx-auto tracking-wide`}>
               {data.subtitle}
             </h2>
             <div className="mt-12 inline-block bg-brand-yellow px-4 py-2 transform -rotate-2">
-                <p className={`font-mono tracking-widest uppercase text-xl md:text-2xl font-bold ${purpleText}`}>{data.content}</p>
+                <p className={`font-mono tracking-widest uppercase text-lg md:text-2xl font-bold ${purpleText}`}>{data.content}</p>
             </div>
           </div>
         );
@@ -98,22 +98,22 @@ export const Slide: React.FC<SlideProps> = ({ data, index }) => {
           <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto px-6 h-full relative z-10">
              <div className="md:w-5/12 mb-12 md:mb-0">
                 <div className="text-7xl md:text-9xl mb-8 inline-block" ref={contentRef}>{data.emoji}</div>
-                <h2 ref={titleRef} className={`font-display font-bold text-6xl md:text-8xl leading-tight mb-6 ${purpleText}`}>
+                <h2 ref={titleRef} className={`font-display font-bold text-5xl md:text-8xl leading-tight mb-6 ${purpleText}`}>
                   {data.title}
                 </h2>
-                {data.subtitle && <p ref={subtitleRef} className={`text-2xl md:text-4xl font-semibold opacity-90 ${purpleText}`}>{data.subtitle}</p>}
+                {data.subtitle && <p ref={subtitleRef} className={`text-xl md:text-4xl font-semibold opacity-90 ${purpleText}`}>{data.subtitle}</p>}
              </div>
              <div className="md:w-6/12">
-                <ul ref={itemsRef} className="space-y-8">
+                <ul ref={itemsRef} className="space-y-6 md:space-y-8">
                   {Array.isArray(data.content) && data.content.map((item, idx) => (
-                    <li key={idx} className={`flex items-start text-3xl md:text-5xl font-body font-medium leading-tight ${purpleText}`}>
+                    <li key={idx} className={`flex items-start text-2xl md:text-5xl font-body font-medium leading-tight ${purpleText}`}>
                       {item.includes("AUJOURD'HUI") || item.includes("Audio...") ? (
-                         <span className={`bg-brand-yellow px-6 py-3 font-bold rounded-lg transform -rotate-1 inline-block shadow-lg ${purpleText}`}>
+                         <span className={`bg-brand-yellow px-4 py-2 md:px-6 md:py-3 font-bold rounded-lg transform -rotate-1 inline-block shadow-lg ${purpleText}`}>
                            {item}
                          </span>
                       ) : (
                         <div className="flex items-start">
-                            <span className="mr-4 text-brand-yellow transform scale-150 relative top-1">●</span>
+                            <span className="mr-3 md:mr-4 text-brand-yellow transform scale-150 relative top-1">●</span>
                             <span>{item}</span>
                         </div>
                       )}
@@ -127,17 +127,17 @@ export const Slide: React.FC<SlideProps> = ({ data, index }) => {
       case SlideType.CENTER_EMOJI:
         return (
           <div className="flex flex-col items-center justify-center text-center h-full px-6 max-w-5xl mx-auto relative z-10">
-             <h2 ref={titleRef} className={`font-body font-bold text-3xl md:text-4xl uppercase tracking-widest mb-10 opacity-80 ${purpleText}`}>
+             <h2 ref={titleRef} className={`font-body font-bold text-2xl md:text-4xl uppercase tracking-widest mb-10 opacity-80 ${purpleText}`}>
                 {data.title}
              </h2>
              <div className="flex flex-col items-center">
-                <span ref={contentRef} className="text-9xl md:text-[16rem] my-10 block filter drop-shadow-xl">
+                <span ref={contentRef} className="text-8xl md:text-[16rem] my-8 md:my-10 block filter drop-shadow-xl">
                   {data.emoji}
                 </span>
-                <h3 ref={subtitleRef} className={`font-display font-bold text-6xl md:text-9xl ${purpleText}`}>
+                <h3 ref={subtitleRef} className={`font-display font-bold text-5xl md:text-9xl ${purpleText}`}>
                   {data.content}
                 </h3>
-                <p className={`mt-8 text-3xl md:text-5xl font-body font-semibold ${purpleText} opacity-90`}>{data.subtitle}</p>
+                <p className={`mt-8 text-2xl md:text-5xl font-body font-semibold ${purpleText} opacity-90`}>{data.subtitle}</p>
              </div>
           </div>
         );
@@ -145,14 +145,14 @@ export const Slide: React.FC<SlideProps> = ({ data, index }) => {
       case SlideType.PROCESS:
         return (
             <div className="flex flex-col items-center justify-center text-center h-full max-w-4xl mx-auto px-6 relative z-10">
-                <div ref={contentRef} className="text-7xl md:text-8xl mb-8 bg-brand-white p-8 rounded-full w-40 h-40 flex items-center justify-center border-8 border-brand-yellow shadow-xl">
+                <div ref={contentRef} className="text-6xl md:text-8xl mb-8 bg-brand-white p-6 md:p-8 rounded-full w-32 h-32 md:w-40 md:h-40 flex items-center justify-center border-4 md:border-8 border-brand-yellow shadow-xl">
                     {data.emoji}
                 </div>
-                <h2 ref={titleRef} className={`font-display font-bold text-7xl md:text-9xl mb-4 ${purpleText}`}>
+                <h2 ref={titleRef} className={`font-display font-bold text-6xl md:text-9xl mb-4 ${purpleText}`}>
                     {data.title}
                 </h2>
-                <h3 ref={subtitleRef} className={`font-display text-5xl md:text-6xl mb-8 opacity-90 ${purpleText}`}>{data.subtitle}</h3>
-                <div className={`text-4xl md:text-5xl font-body font-medium leading-snug ${purpleText}`}>
+                <h3 ref={subtitleRef} className={`font-display text-4xl md:text-6xl mb-8 opacity-90 ${purpleText}`}>{data.subtitle}</h3>
+                <div className={`text-3xl md:text-5xl font-body font-medium leading-snug ${purpleText}`}>
                     {data.content}
                 </div>
             </div>
@@ -161,33 +161,65 @@ export const Slide: React.FC<SlideProps> = ({ data, index }) => {
       case SlideType.BIG_STATEMENT:
         return (
             <div className="flex flex-col items-center justify-center text-center h-full px-6 relative z-10">
-                <h2 ref={titleRef} className={`font-display font-bold text-6xl md:text-[8rem] leading-none mb-12 ${purpleText}`}>
+                <h2 ref={titleRef} className={`font-display font-bold text-5xl md:text-[8rem] leading-none mb-12 ${purpleText}`}>
                     {data.title}
                 </h2>
-                <div ref={contentRef} className={`font-body font-medium text-4xl md:text-7xl p-10 md:p-14 border-8 border-brand-yellow rounded-[3rem] bg-brand-white shadow-2xl ${purpleText}`}>
+                <div ref={contentRef} className={`font-body font-medium text-3xl md:text-7xl p-8 md:p-14 border-4 md:border-8 border-brand-yellow rounded-2xl md:rounded-[3rem] bg-brand-white shadow-2xl ${purpleText}`}>
                     {data.content}
                 </div>
             </div>
         );
 
+      case SlideType.IMAGE_CTA:
+        return (
+            <div className="flex flex-col items-center justify-center text-center h-full px-4 relative z-10 w-full max-w-7xl mx-auto py-12 md:py-20">  
+                <h2 ref={titleRef} className={`font-display font-bold text-3xl md:text-6xl mb-12 ${purpleText}`}>
+                  {data.title}
+                </h2>              
+                {/* Image Container with enforced Aspect Ratio */}
+                <div ref={contentRef} className="relative w-full max-w-3xl mb-8 md:mb-12 rounded-xl md:rounded-3xl border-4 md:border-8 border-brand-yellow shadow-2xl transform rotate-1 hover:rotate-0 transition-all duration-500 bg-brand-yellow aspect-[1022/576]">
+                    <img 
+                        src={data.emoji} 
+                        alt={data.title} 
+                        className="w-full h-full rounded-xl md:rounded-3xl object-cover"
+                        loading="lazy"
+                    />
+                </div>
+
+                <p className={`text-xl md:text-4xl font-body font-medium mb-8 md:mb-16 max-w-5xl leading-tight ${purpleText}`}>
+                    {data.content}
+                </p>
+
+                {/* CTA Button Responsive */}
+                <a 
+                    href={data.extraData?.items?.[0]?.title} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="group relative inline-flex items-center justify-center px-8 py-4 md:px-16 md:py-8 bg-brand-purple text-brand-white font-display font-bold text-xl md:text-4xl lg:text-5xl rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border-4 border-transparent hover:border-brand-yellow text-center max-w-full"
+                >
+                    <span className="relative z-10">{data.extraData?.label}</span>
+                </a>
+            </div>
+        );
+
       case SlideType.CONTACT:
           return (
-            <div className="flex flex-col items-center justify-center h-full relative z-10">
-                <h2 ref={titleRef} className={`font-display font-bold text-7xl md:text-9xl mb-12 ${purpleText}`}>
+            <div className="flex flex-col items-center justify-center h-full relative z-10 px-4">
+                <h2 ref={titleRef} className={`font-display font-bold text-6xl md:text-9xl mb-12 ${purpleText}`}>
                     {data.title}
                 </h2>
-                <div ref={contentRef} className={`bg-brand-purple text-brand-white p-12 rounded-3xl shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500 hover:scale-105 cursor-pointer border-4 border-brand-yellow`}>
-                    <p className="text-4xl md:text-6xl font-mono font-bold">{data.content}</p>
+                <div ref={contentRef} className={`bg-brand-purple text-brand-white p-6 md:p-12 rounded-2xl md:rounded-3xl shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500 hover:scale-105 cursor-pointer border-4 border-brand-yellow max-w-[95vw]`}>
+                    <p className="text-2xl md:text-6xl font-mono font-bold break-words text-center">{data.content}</p>
                 </div>
-                <div className="mt-16 text-9xl animate-bounce">{data.emoji}</div>
+                <div className="mt-16 text-8xl md:text-9xl animate-bounce">{data.emoji}</div>
             </div>
           );
 
       default:
         return (
             <div className="flex flex-col items-center justify-center h-full px-6 relative z-10">
-                <h2 ref={titleRef} className={`text-6xl font-bold mb-6 ${purpleText}`}>{data.title}</h2>
-                <div ref={contentRef} className={`text-3xl ${purpleText}`}>{Array.isArray(data.content) ? data.content.join(', ') : data.content}</div>
+                <h2 ref={titleRef} className={`text-5xl md:text-6xl font-bold mb-6 ${purpleText}`}>{data.title}</h2>
+                <div ref={contentRef} className={`text-2xl md:text-3xl ${purpleText}`}>{Array.isArray(data.content) ? data.content.join(', ') : data.content}</div>
             </div>
         );
     }

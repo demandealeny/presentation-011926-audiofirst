@@ -183,6 +183,18 @@ export const SLIDES: SlideContent[] = [
     emoji: "💎"
   },
   {
+    id: 'slide-club',
+    type: SlideType.IMAGE_CTA,
+    title: "Aller plus loin ensemble",
+    content: "Rejoignez le club des entrepreneurs qui veulent gagner plus, se former et rencontrer les bonnes personnes.",
+    emoji: "https://i.vimeocdn.com/video/2106594326-5e002c67f54fe20960d7b219a1e8dbbb84d7ef2f5d690c1b441c6fa9731857a7-d_1280?region=us",
+    extraData: {
+        label: "Découvrir le Club Sam'uraï 🚀",
+        items: [{ title: "https://www.skool.com/cime-4598/about" }]
+    },
+    highlight: true
+  },
+  {
     id: 'slide-21',
     type: SlideType.CONTACT,
     title: "Questions ?",
