@@ -1,4 +1,5 @@
-import { SlideContent, SlideType } from './types';
+import imgAvatarWebsite from '../assets/avatar-website.jpg';
+import { type SlideContent, SlideType } from './types';
 
 export const SLIDES: SlideContent[] = [
   {
@@ -7,7 +8,7 @@ export const SLIDES: SlideContent[] = [
     title: "L'Audio-First",
     subtitle: "Une nouvelle façon de connecter avec son audience",
     content: "Leny",
-    image: "/public/assets/avatar-website.jpg",
+    image: imgAvatarWebsite,
     emoji: "🎙️"
   },
   {
@@ -63,20 +64,20 @@ export const SLIDES: SlideContent[] = [
     highlight: true,
     extraData: {
       items: [
-        { 
-          title: "$1.8M", 
-          desc: "Andrea Crowder : x4.5 de C.A. en 1 an (passage de 400k à 1.8M) en basculant sur un modèle 'Tout Audio'.", 
-          icon: "📈" 
+        {
+          title: "$1.8M",
+          desc: "Andrea Crowder : x4.5 de C.A. en 1 an (passage de 400k à 1.8M) en basculant sur un modèle 'Tout Audio'.",
+          icon: "📈"
         },
-        { 
-          title: "$320k", 
-          desc: "Julie Ciardi : Lancement réussi avec 50% de cash collecté immédiatement grâce à l'intimité du podcast privé.", 
-          icon: "💰" 
+        {
+          title: "$320k",
+          desc: "Julie Ciardi : Lancement réussi avec 50% de cash collecté immédiatement grâce à l'intimité du podcast privé.",
+          icon: "💰"
         },
-        { 
-          title: "$150k/mois", 
-          desc: "Colleen Catchman : Passage de 40k à 150k $/mois grâce à l'utilisation stratégique de tunnels de podcasts privés.", 
-          icon: "🚀" 
+        {
+          title: "$150k/mois",
+          desc: "Colleen Catchman : Passage de 40k à 150k $/mois grâce à l'utilisation stratégique de tunnels de podcasts privés.",
+          icon: "🚀"
         }
       ]
     }
@@ -204,8 +205,8 @@ export const SLIDES: SlideContent[] = [
     content: "Rejoignez le club des entrepreneurs qui veulent gagner plus, se former et rencontrer les bonnes personnes.",
     emoji: "https://i.vimeocdn.com/video/2106594326-5e002c67f54fe20960d7b219a1e8dbbb84d7ef2f5d690c1b441c6fa9731857a7-d_1280?region=us",
     extraData: {
-        label: "Découvrir le Club Sam'uraï 🚀",
-        items: [{ title: "https://www.skool.com/cime-4598/about" }]
+      label: "Découvrir le Club Sam'uraï 🚀",
+      items: [{ title: "https://www.skool.com/cime-4598/about" }]
     },
     highlight: true
   },

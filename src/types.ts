@@ -22,9 +22,9 @@ export interface SlideContent {
   highlight?: boolean; // Changes background to white/yellow
   extraData?: {
     label?: string;
-    items?: { 
-      title: string; 
-      desc?: string; 
+    items?: {
+      title: string;
+      desc?: string;
       icon?: string;
       image?: string; // Added image property for items (e.g., cards)
     }[];
