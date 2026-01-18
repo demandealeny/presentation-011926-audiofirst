@@ -1,3 +1,5 @@
+import type { ImageMetadata } from "astro";
+
 export enum SlideType {
   TITLE = 'TITLE',
   intro = 'INTRO',
@@ -18,7 +20,7 @@ export interface SlideContent {
   subtitle?: string;
   content?: string | string[];
   emoji?: string;
-  image?: string; // Added image property
+  image?: ImageMetadata; // Added image property
   highlight?: boolean; // Changes background to white/yellow
   extraData?: {
     label?: string;

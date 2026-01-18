@@ -1,4 +1,4 @@
-import imgAvatarWebsite from '../assets/avatar-website.jpg';
+import imgAvatarWebsite from '@/assets/avatar-website.jpg';
 import { type SlideContent, SlideType } from './types';
 
 export const SLIDES: SlideContent[] = [
