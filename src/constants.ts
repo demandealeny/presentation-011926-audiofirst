@@ -127,7 +127,7 @@ export const SLIDES: SlideContent[] = [
     type: SlideType.LIST,
     title: "DÉMO LIVE: On teste ensemble",
     content: [
-      "1. Follow @[ton_compte_instagram]",
+      "1. Follow @lenydiallo.store",
       "2. Attendre le DM",
       "3. Rejoindre le podcast"
     ],
@@ -206,7 +206,7 @@ export const SLIDES: SlideContent[] = [
     emoji: "https://i.vimeocdn.com/video/2106594326-5e002c67f54fe20960d7b219a1e8dbbb84d7ef2f5d690c1b441c6fa9731857a7-d_1280?region=us",
     extraData: {
       label: "Découvrir le Club Sam'uraï 🚀",
-      items: [{ title: "https://www.skool.com/cime-4598/about" }]
+      items: [{ title: "https://www.skool.com/cime-4598/about?ref=c22e845d1b244bf09e6c314de7894f8a" }]
     },
     highlight: true
   },
@@ -214,7 +214,7 @@ export const SLIDES: SlideContent[] = [
     id: 'slide-21',
     type: SlideType.CONTACT,
     title: "Questions ?",
-    content: "Contact : [ton_email_ou_instagram]",
+    content: "Contact : leny@leny.store ou @lenydiallo.store sur Instagram",
     emoji: "👋",
     highlight: true
   }
