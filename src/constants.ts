@@ -15,7 +15,7 @@ export const SLIDES: SlideContent[] = [
     id: 'slide-2',
     type: SlideType.LIST,
     title: "Qui je suis",
-    subtitle: "J'aide les e-commerce multimarques à croître sereinement",
+    subtitle: "Je m'appelle Leny et j'aide les e-commerce multimarques à croître sereinement",
     content: [
       "📊 Data - Collecte de données",
       "💰 Monétisation - Retail Media",
