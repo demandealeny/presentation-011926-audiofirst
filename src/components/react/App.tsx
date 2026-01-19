@@ -46,12 +46,12 @@ const App: React.FC = () => {
       });
 
       // Define the journey of the orb
-      tl.to(orbRef.current, { top: "15%", left: "80%", scale: 2, backgroundColor: "#320133", rotation: 90, duration: 1 })
-        .to(orbRef.current, { top: "30%", left: "15%", scale: 1, backgroundColor: "#fcd74f", borderRadius: "0%", rotation: 180, duration: 1 })
-        .to(orbRef.current, { top: "45%", left: "85%", scale: 1.5, backgroundColor: "#320133", borderRadius: "50%", rotation: 270, duration: 1 })
+      tl.to(orbRef.current, { top: "15%", left: "80%", scale: 2, opacity: 0.6, backgroundColor: "#320133", rotation: 90, duration: 1 })
+        .to(orbRef.current, { top: "30%", left: "15%", scale: 1, opacity: 0.6, backgroundColor: "#fcd74f", borderRadius: "0%", rotation: 180, duration: 1 })
+        .to(orbRef.current, { top: "45%", left: "85%", scale: 1.5, opacity: 0.6, backgroundColor: "#320133", borderRadius: "50%", rotation: 270, duration: 1 })
         .to(orbRef.current, { top: "60%", left: "50%", scale: 3, opacity: 0.05, duration: 0.5 })
-        .to(orbRef.current, { top: "75%", left: "20%", scale: 1.2, opacity: 0.8, backgroundColor: "#fcd74f", duration: 1 })
-        .to(orbRef.current, { top: "90%", left: "50%", scale: 0.5, backgroundColor: "#320133", duration: 0.5 });
+        .to(orbRef.current, { top: "75%", left: "20%", scale: 1.2, opacity: 0.6, backgroundColor: "#fcd74f", duration: 1 })
+        .to(orbRef.current, { top: "90%", left: "50%", scale: 0.5, opacity: 0.6, backgroundColor: "#320133", duration: 0.5 });
 
     }, mainRef);
 

@@ -133,7 +133,7 @@ export const Slide: React.FC<SlideProps> = ({ data, index }) => {
             <div className="">
               <ul ref={itemsRef} className="space-y-6 md:space-y-8">
                 {Array.isArray(data.content) && data.content.map((item, idx) => (
-                  <li key={idx} className={`flex items-start text-2xl md:text-5xl font-body font-medium leading-tight ${purpleText}`}>
+                  <li key={idx} className={`flex items-start text-2xl md:text-4xl font-body font-medium leading-tight ${purpleText}`}>
                     {item.toLocaleLowerCase().includes("aujourd'hui") || item.includes("Audio...") ? (
                       <span className={`bg-brand-yellow px-4 py-2 md:px-6 md:py-3 font-bold rounded-lg transform -rotate-1 inline-block shadow-lg ${purpleText}`}>
                         {item}

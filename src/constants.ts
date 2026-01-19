@@ -50,7 +50,8 @@ export const SLIDES: SlideContent[] = [
     title: "Pourquoi l'audio ?",
     content: [
       "🔄 Consommable partout",
-      "❤️ Crée l'intimité rapidement",
+      "❤️ Crée de l'intimité",
+      "😌 Facile à produire",
       "🌊 Peu saturé"
     ],
     emoji: "🚀"
@@ -151,8 +152,7 @@ export const SLIDES: SlideContent[] = [
     type: SlideType.LIST,
     title: "Pourquoi ça fonctionne",
     content: [
-      "✅ Automatique",
-      "🎤 Intime",
+      "✅ Automatique et direct",
       "📱 Accessible partout",
       "📊 Trackable"
     ],
@@ -203,7 +203,7 @@ export const SLIDES: SlideContent[] = [
     id: 'slide-21',
     type: SlideType.CONTACT,
     title: "Questions ?",
-    content: "Contact : leny@leny.store ou @lenydiallo.store sur Instagram",
+    content: "Contact : leny@leny.store",
     emoji: "👋",
     highlight: true
   }
