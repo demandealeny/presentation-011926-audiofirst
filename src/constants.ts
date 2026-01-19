@@ -15,11 +15,11 @@ export const SLIDES: SlideContent[] = [
     id: 'slide-2',
     type: SlideType.LIST,
     title: "Qui je suis",
-    subtitle: "Je m'appelle Leny et j'aide les e-commerce multimarques à croître sereinement",
+    subtitle: "Je m'appelle Leny, j'aide les e-commerce à croître sereinement",
     content: [
       "📊 Data - Collecte de données",
       "💰 Monétisation - Retail Media",
-      "🎧 Expérience Client - Audio First ← AUJOURD'HUI"
+      "🎧 Expérience Client - Audio First · le sujet d'aujourd'hui"
     ],
     emoji: "👋"
   },
@@ -49,7 +49,7 @@ export const SLIDES: SlideContent[] = [
     type: SlideType.LIST,
     title: "Pourquoi l'audio ?",
     content: [
-      "🔄 Consommable partout (multitâche)",
+      "🔄 Consommable partout",
       "❤️ Crée l'intimité rapidement",
       "🌊 Peu saturé"
     ],
@@ -152,15 +152,16 @@ export const SLIDES: SlideContent[] = [
     title: "Pourquoi ça fonctionne",
     content: [
       "✅ Automatique",
-      "🎤 Personnel (voix)",
-      "📱 Accessible partout"
+      "🎤 Intime",
+      "📱 Accessible partout",
+      "📊 Trackable"
     ],
     emoji: "⚙️"
   },
   {
     id: 'slide-16',
     type: SlideType.BIG_STATEMENT,
-    title: "10 façons d'utiliser l'audio",
+    title: "6 façons d'utiliser l'audio",
     content: "dans TON business",
     emoji: "💡",
     highlight: true
@@ -168,28 +169,16 @@ export const SLIDES: SlideContent[] = [
   {
     id: 'slide-17',
     type: SlideType.LIST,
-    title: "Les applications (1/2)",
+    title: "Les cas d'usages",
     content: [
-      "🧘 Coach : Méditations/exercices guidés",
-      "💻 SaaS : Onboarding audio interactif",
-      "🎓 Formation : Modules immersifs",
-      "🛍️ E-commerce : Stories produit",
-      "📊 Consultant : Mini-audits audio"
+      "🧘 Coach : Méditations guidées",
+      "💻 SaaS : Onboarding interactif",
+      "🎓 Formation : Q/A asynchrone",
+      "🎤 Summit : Micro audio summit",
+      "🛍️ E-commerce : Routine de soin",
+      "📊 Consultant : Mini-audits"
     ],
     emoji: "☝️"
-  },
-  {
-    id: 'slide-18',
-    type: SlideType.LIST,
-    title: "Les applications (2/2)",
-    content: [
-      "🎤 Summit : Micro audio summit",
-      "📚 Lead Magnet : Série podcast privée",
-      "💎 Qualification : Diagnostic audio payant",
-      "👥 Communauté : Mastermind audio asynchrone",
-      "⭐ VIP : Coaching avec flux podcast"
-    ],
-    emoji: "✌️"
   },
   {
     id: 'slide-20',
