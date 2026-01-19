@@ -117,6 +117,52 @@ export const SLIDES: SlideContent[] = [
     emoji: "☝️"
   },
   {
+    id: 'slide-9a',
+    type: SlideType.BIG_STATEMENT,
+    title: "Mon implémentation",
+    content: "Comment je déploie l'audio dans mon business",
+    emoji: "🎯",
+    highlight: true
+  },
+  {
+    id: 'slide-9b',
+    type: SlideType.PROCESS,
+    title: "Ma stratégie Audio-First",
+    subtitle: "De YouTube aux podcasts privés ciblés",
+    emoji: "🎙️",
+    extraData: {
+      items: [
+        {
+          title: "YouTube",
+          desc: "Contenu technique : Retail Média + Collecte de données",
+          icon: "📹"
+        },
+        {
+          title: "Podcasts Privés",
+          desc: "< 10 épisodes par thématique (Retail Média pour e-commerce 500k-5M€ / First Party Data & RGPD)",
+          icon: "🎧"
+        },
+        {
+          title: "Contact Direct",
+          desc: "Tracking de l'écoute → Contact personnalisé dès qu'un seuil est atteint",
+          icon: "💬"
+        }
+      ]
+    }
+  },
+  {
+    id: 'slide-9c',
+    type: SlideType.LIST,
+    title: "Pourquoi cette approche",
+    content: [
+      "🎯 Qualification naturelle via l'écoute",
+      "🤝 Approche personnalisée (pas d'automatisation)",
+      "📊 Trackable et mesurable",
+      "💎 Contenu de haute valeur sur des niches précises"
+    ],
+    emoji: "✨"
+  },
+  {
     id: 'slide-10',
     type: SlideType.BIG_STATEMENT,
     title: "L'opportunité",
