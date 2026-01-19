@@ -153,7 +153,7 @@ export const SLIDES: SlideContent[] = [
   {
     id: 'slide-9c',
     type: SlideType.LIST,
-    title: "Pourquoi cette approche",
+    title: "Data et Qualité",
     content: [
       "🎯 Qualification naturelle via l'écoute",
       "🤝 Approche personnalisée (pas d'automatisation)",
