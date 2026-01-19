@@ -108,10 +108,10 @@ export const SLIDES: SlideContent[] = [
     title: "Les cas d'usages",
     content: [
       "🧘 Coach : Méditations guidées",
-      "💻 SaaS : Onboarding interactif",
-      "🎓 Formation : Q/A asynchrone",
-      "🎤 Summit : Micro audio summit",
-      "🛍️ E-commerce : Routine de soin",
+      "💻 SaaS : Onboarding",
+      "🎓 Formation : Q/A",
+      "🎤 Summit : Audio summit",
+      "🛍️ Commerce : Routine de soin",
       "📊 Consultant : Mini-audits"
     ],
     emoji: "☝️"

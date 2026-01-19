@@ -122,7 +122,7 @@ export const Slide: React.FC<SlideProps> = ({ data, index }) => {
 
       case SlideType.LIST:
         return (
-          <div className="flex flex-col md:flex-row items-center gap-16 w-full max-w-7xl mx-auto px-6 h-full relative z-10">
+          <div className="flex flex-col md:flex-row items-center w-full max-w-7xl mx-auto px-6 h-full relative z-10">
             <div className="md:w-5/12 mb-12 md:mb-0">
               <div className="text-7xl md:text-9xl mb-8 inline-block" ref={contentRef}>{data.emoji}</div>
               <h2 ref={titleRef} className={`font-display font-bold text-5xl md:text-8xl leading-tight mb-6 ${purpleText}`}>
@@ -133,7 +133,7 @@ export const Slide: React.FC<SlideProps> = ({ data, index }) => {
             <div className="">
               <ul ref={itemsRef} className="space-y-6 md:space-y-8">
                 {Array.isArray(data.content) && data.content.map((item, idx) => (
-                  <li key={idx} className={`flex items-start text-2xl md:text-4xl font-body font-medium leading-tight ${purpleText}`}>
+                  <li key={idx} className={`flex items-start text-2xl md:text-5xl font-body font-medium leading-tight ${purpleText}`}>
                     {item.toLocaleLowerCase().includes("aujourd'hui") || item.includes("Audio...") ? (
                       <span className={`bg-brand-yellow px-4 py-2 md:px-6 md:py-3 font-bold rounded-lg transform -rotate-1 inline-block shadow-lg ${purpleText}`}>
                         {item}
